@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Cream);
+}
+
+main {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  max-width: 340px;
+  background-color: var(--White);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+figure,
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+}
+
+figure img:nth-of-type(2) {
+  display: none;
+}
+
+.content {
+  margin: 10px 20px 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content p,
+.content a {
+  margin: 8px;
+}
+
+.content > p:nth-of-type(1) {
+  color: var(--Dark-grayish-blue);
+  font-variant-caps: all-petite-caps;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.content > p:nth-of-type(2) {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  font-size: xx-large;
+  line-height: 1em;
+}
+
+.content > p:nth-of-type(3) {
+  color: var(--Dark-grayish-blue);
+  font-weight: 500;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price > p:nth-of-type(1) {
+  color: var(--Dark-cyan);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.price > p:nth-of-type(2) {
+  color: var(--Dark-grayish-blue);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.button {
+  display: flex;
+}
+
+.button a {
+  background-color: var(--Dark-cyan);
+  color: var(--White);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.button a:hover {
+  background-color: var(--Very-dark-blue);
+}
+
+/* attribution */
+.attribution {
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* attribution-end */
+
+@media screen and (min-width: 1000px) {
+  main {
+    max-width: 550px;
+    display: flex;
+    flex-direction: row; /* Mengubah tata letak menjadi horizontal di desktop */
+  }
+
+  figure {
+    flex: 1; /* Membuat figure fleksibel untuk menyesuaikan lebar */
+    max-width: 100%; /* Pastikan figure menggunakan 50% lebar konten */
+    height: 100%;
+  }
+
+  figure img:nth-of-type(1) {
+    display: none; /* Sembunyikan gambar mobile di layout desktop */
+  }
+
+  figure img:nth-of-type(2) {
+    display: block; /* Tampilkan gambar desktop */
+    border-radius: 10px 0 0 10px; /* Sesuaikan border-radius untuk layout horizontal */
+  }
+
+  .content {
+    flex: 1; /* Membuat konten fleksibel untuk menyesuaikan dengan gambar */
+  }
+}
