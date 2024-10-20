@@ -36,15 +36,15 @@ main {
   flex-direction: column;
 }
 
-figure,
-figure img {
+picture,
+picture img {
   max-width: 100%;
   height: auto;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
 }
 
-figure img:nth-of-type(2) {
+picture img:nth-of-type(2) {
   display: none;
 }
 
@@ -52,29 +52,32 @@ figure img:nth-of-type(2) {
   margin: 10px 20px 15px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .content p,
-.content a {
-  margin: 8px;
+.button button,
+.price h2 {
+  margin: 0.3em;
 }
 
 .content > p:nth-of-type(1) {
   color: var(--Dark-grayish-blue);
   font-variant-caps: all-petite-caps;
   font-weight: 500;
+  font-size: large;
   letter-spacing: 5px;
 }
 
-.content > p:nth-of-type(2) {
+.content h1 {
   font-family: "Fraunces", sans-serif;
   font-weight: 700;
   font-size: xx-large;
   line-height: 1em;
+  margin: 0.3em 0.18em;
 }
 
-.content > p:nth-of-type(3) {
+.content > p:nth-of-type(2) {
   color: var(--Dark-grayish-blue);
   font-weight: 500;
 }
@@ -84,14 +87,14 @@ figure img:nth-of-type(2) {
   align-items: center;
 }
 
-.price > p:nth-of-type(1) {
+.price h2 {
   color: var(--Dark-cyan);
   font-family: "Fraunces", sans-serif;
   font-weight: 700;
   font-size: xx-large;
 }
 
-.price > p:nth-of-type(2) {
+.price p {
   color: var(--Dark-grayish-blue);
   text-decoration: line-through;
   font-weight: 500;
@@ -101,32 +104,33 @@ figure img:nth-of-type(2) {
   display: flex;
 }
 
-.button a {
+.button button {
+  font-family: "Montserrat", sans-serif;
   background-color: var(--Dark-cyan);
   color: var(--White);
   width: 100%;
   display: flex;
+  border: none;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
   font-weight: 700;
   padding: 15px;
   border-radius: 10px;
 }
 
-.button a:hover {
+.button button:hover {
   background-color: var(--Very-dark-blue);
 }
 
 /* attribution */
-.attribution {
+footer {
   margin-top: 10px;
   font-size: 11px;
   text-align: center;
 }
 
-.attribution a {
+footer a {
   color: hsl(228, 45%, 44%);
 }
 /* attribution-end */
@@ -138,22 +142,17 @@ figure img:nth-of-type(2) {
     flex-direction: row; /* Mengubah tata letak menjadi horizontal di desktop */
   }
 
-  figure {
-    flex: 1; /* Membuat figure fleksibel untuk menyesuaikan lebar */
-    max-width: 100%; /* Pastikan figure menggunakan 50% lebar konten */
+  picture,
+  picture img {
+    flex: 1; /* Membuat picture fleksibel untuk menyesuaikan lebar */
+    max-width: 100%; /* Pastikan picture menggunakan 50% lebar konten */
     height: 100%;
-  }
-
-  figure img:nth-of-type(1) {
-    display: none; /* Sembunyikan gambar mobile di layout desktop */
-  }
-
-  figure img:nth-of-type(2) {
     display: block; /* Tampilkan gambar desktop */
     border-radius: 10px 0 0 10px; /* Sesuaikan border-radius untuk layout horizontal */
   }
 
   .content {
     flex: 1; /* Membuat konten fleksibel untuk menyesuaikan dengan gambar */
+    max-width: 43%;
   }
 }

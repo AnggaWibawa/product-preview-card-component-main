@@ -14,37 +14,40 @@
   </head>
   <body>
     <main>
-      <figure>
-        <!-- first img -->
-        <img src="./images/image-product-mobile.jpg" alt="Product" />
-
-        <!-- sec img -->
-        <img src="./images/image-product-desktop.jpg" alt="Product" />
-      </figure>
+      <picture>
+        <source
+          media="(min-width: 1000px)"
+          srcset="./images/image-product-desktop.jpg"
+        />
+        <img
+          src="./images/image-product-mobile.jpg"
+          alt="Gabrielle Essence Eau De Parfum"
+        />
+      </picture>
       <section class="content">
         <p>Perfume</p>
-        <p>Gabrielle Essence Eau De Parfum</p>
+        <h1>Gabrielle Essence Eau De Parfum</h1>
         <p>
           A floral, solar and voluptuous interpretation composed by Olivier
           Polge, Perfumer-Creator for the House of CHANEL.
         </p>
-        <section class="price">
-          <p>$149.99</p>
+        <div class="price">
+          <h2>$149.99</h2>
           <p>$169.99</p>
-        </section>
-        <section class="button">
-          <a href="#"
-            ><img src="./images/icon-cart.svg" alt="Icon Cart" /> Add to Cart</a
-          >
-        </section>
+        </div>
+        <div class="button">
+          <button aria-label="Add Gabrielle Essence Eau De Parfum to cart">
+            <img src="./images/icon-cart.svg" alt="" /> Add to Cart
+          </button>
+        </div>
       </section>
     </main>
-    <section class="attribution">
+    <footer>
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by
       <a href="https://github.com/AnggaWibawa" target="_blank">AnggaWibawa</a>.
-    </section>
+    </footer>
   </body>
 </html>
